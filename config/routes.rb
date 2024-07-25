@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root 'homepage#index'
 
   # Add routes below this line
-  post '/users' => 'users#create'
 
   # TASKS
   get    '/tasks'                    => 'tasks#index'
@@ -16,8 +15,12 @@ Rails.application.routes.draw do
 
   # USERS
   post   '/users'                    => 'users#create'
+  post '/users' => 'users#create'
 
   # SESSIONS
+  post '/sessions' => 'sessions#create'
+  get '/authenticated' => 'sessions#authenticated'
+  delete '/sessions' => 'sessions#destroy'
   post   '/sessions'                 => 'sessions#create'
   get    '/authenticated'            => 'sessions#authenticated'
   delete '/sessions'                 => 'sessions#destroy'
