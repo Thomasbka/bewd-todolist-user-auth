@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'homepage#index'
 
   # Add routes below this line
+  post '/users' => 'users#create'
 
   # TASKS
   get    '/tasks'                    => 'tasks#index'
